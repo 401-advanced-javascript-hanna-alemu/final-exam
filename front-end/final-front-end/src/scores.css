@@ -1,0 +1,9 @@
+#container {
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+body {
+    background-color: rgb(226, 226, 240);
+    font-size: 25px;
+}

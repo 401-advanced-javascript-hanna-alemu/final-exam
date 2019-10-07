@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/scores', handleGet);
+
 router.get('/scores-bigger-than/:value', handleGetBiggerThan);
 
 router.post('/scores', handlePost);
@@ -26,7 +27,7 @@ function handleGet (request, response, next) {
 
 const sortByScores = (array) => {
     array.sort((a, b) => {
-      return (a.score - b.score);
+      return (b.score - a.score);
     });
     return(array);
   };
@@ -45,7 +46,7 @@ function handleGetBiggerThan(request, response, next) {
             results.push(person);
         }
     })
-
+    console.log(results);
     response.status(200).json(results);
  
 }
